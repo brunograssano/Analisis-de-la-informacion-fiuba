@@ -268,18 +268,237 @@ Una actividad esta compuesta por un conjunto de tareas a ser realizadas. Verbo $
 
 
 
+\section*{Tercera clase}
+
+\section{Modelo de comportamiento}
+\subsection*{Casos de uso}
+
+Hay tres componentes en el modelo de comportamiento.
+\begin{itemize}
+    \item Actores, representa algo o alguien (una persona, dispositivo, otro sistema) que interactúa con el sistema sin ser parte de el. Puede ingresar y/o recibir información del sistema. Se identifican fácilmente a partir de los roles representados por la swimline's. Se pueden identificar respondiendo a las siguientes preguntas: ¿Quien esta interesado en cierto requerimiento? ¿En que lugar de la organización se usa el sistema? ¿Quien se beneficiara con el uso del sistema? ¿Quien mantendrá el sistema? Etc.
+    
+    La clave para identificar buenos actores es pensar en el rol con el cual el actor interacciona con el sistema.
+
+    \item Casos de uso, especifica el comportamiento de una parte del sistema. Representan un \textbf{requisito funcional} del sistema. Es un conjunto de acciones (variaciones incluidas) que ejecuta un sistema para producir un resultado para un actor. Gráficamente es una elipse con el nombre del caso de uso adentro.
+    
+    Son fácilmente identificables a partir del modelo de negocio (las actividades/tareas). Se pueden identificar con algunas preguntas también. ¿Cuales son las tareas de cada actor? ¿Que casos de uso crecerán, almacenaran, modificaran, consultaran, o eliminaran esta información? ¿Algún actor necesita informar al sistema sobre cambios externos? ¿Necesita algún actor ser informado de cambios en el sistema? Etc.
+    
+    Para identificar buenos y malos casos de uso, hay dos reglas.
+    \begin{itemize}
+        \item Completitud temporal, un caso de uso debe ser completo de principio a fin. \textit{Ej. Malos casos: seleccionar curso, registrar curso, informar registro (no son completos de principio a fin, cada uno esta en una parte, alumno, sistema)- Correcto: Registrar curso. (va del alumno al sistema)}
+        \item completitud funcional, cuando varios casos de uso tratan con la misma entidad y son iniciados por el mismo actor podemos resumirlo en un solo caso de uso.\textit{Ej. Incorrecto: Departamento alumno: agregar curso, modificar curso, eliminar curso - Correcto: Mantener curso}
+    \end{itemize}
+    
+    \item Diagramas de casos de uso, muestrea un conjunto de casos de uso, actores y sus relaciones. Permite tener una visualización del comportamiento de un sistema. En los diagramas de caso de uso general, se tiene una visión de alto nivel de todo el sistema, hay que tener 'todos' los actores y 'todos' los casos de uso del sistema. Hay actores primarios (izquierda diagrama)(disparan casos de uso) y actores secundarios (derecha diagrama)(no disparan casos de uso). Puede darse que un actor sea principal y secundario (esta en ambos lados).
+\end{itemize}
+
+%imagen actor (palito)
 
 
+\subsection*{Documentación de casos de uso}
+Tienen una descripción del caso, y flujo de eventos. (pre-condiciones, flujo principal, subflujos, flujos de excepción, post-condiciones)
+
+Las pre-condiciones son las acciones que deben haber sido ejecutadas previas a la ejecución del caso de uso. 
+
+Flujo de eventos, es una descripción de una secuencia de acciones necesarias para proveer la funcionalidad del sistema a un actor determinado.
+
+Ej. Registrar curso a dictar.
+
+\subsubsection*{Flujo principal}
+\begin{enumerate}
+    \item Profesor inicia en el sistema
+    \item Sistema valida login (E1) y solicita ingresar cuatrimestre   [Las excepciones (flujo) se ponen entre paréntesis]
+    \item Profesor ingresa cuatrimestre
+    \item Sistema solicita ingresar acción a ejecutar - Agregar, Modificar, Eliminar, Salir
+    \item Profesor ingresa acción
+    [Comienzan los subflujos]
+    \begin{itemize}
+        \item Agregar: Ejecutar subflujo S1: Agregar Curso a dictar
+        \item Modificar: Ejecutar sublfujo S2: Modificar curso a dictar
+        ...
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection*{Subflujo S1 Agregar Curso a dictar}
+\begin{enumerate}
+    \item Sistema solicita ingresar materia
+    \item profesor ingresa materia (E2)
+    \item Sistema muestra los cursos correspondientes a la materia
+    \item Profesos selecciona los cursos a dictar
+    \item Sistema registra al profesor en los cursos seleccionados
+    \item El caso de uso comienza nuevamente en Sistema solicita ingresar acción a ejecutar    [Se indica donde se sigue]
+\end{enumerate}
+
+\subsubsection*{Excepción E1}
+\begin{enumerate}
+    \item Sistema solicita reingresar login o finalizar caso de uso.
+    \begin{enumerate}
+        \item Ingresa login y continua en 2.
+        \item Finaliza casos de uso.
+    \end{enumerate}
+\end{enumerate}
 
 
+\subsection*{Tipos de relaciones}
+\begin{itemize}
+    \item De asociación entre actores y casos de uso.
+    \item De dependencia entre casos de uso. 2 tipos, de inclusión <<INCLUDE>> y de extensión <<EXTEND>>
+    
+    <<INCLUDE>> es para evitar repetir en varios casos de uso el mismo flujo de eventos. Llevo los casos comunes a un nuevo caso de uso común a ambos. Gráficamente es una linea punteada con <<INCUDE>>. La llamada del flujo de eventos es ... \\n Include(Validar Usuario)  \\n ...
+    
+    <<EXTEND>> se usa cuando en un caso de uso determinados eventos se dan solamente bajo ciertas condiciones. Gráficamente la flecha es punteada y va desde el caso de uso extendido al caso de uso base. El caso de uso base no se entera si se ejecuta el caso de uso extendido. Va acompañado por una etiqueta que tiene que coincidir en el flujo.
+    
+    \item De generalización/especialización entre actores/entre casos de uso.
+\end{itemize}
+
+%imagen <<include>>
+
+\section*{Cuarta clase}
+\subsection*{Caso de uso: Actor temporal}
+Indica el paso del tiempo, tiene una flecha punteada hacia el caso de uso. %agregar imagen
+
+\subsection*{Caso de uso: Relaciones de especialización/generalización}
+Son actores que pueden tener una flecha hacia otro actor, para indicar que puede iniciar los casos de uso de ese otro actor.
+
+\section{Proceso de desarrollo iterativo e incremental}
+Voy realizando pequeñas partes del proyecto total. En cada iteración se van capturando requerimientos, análisis, diseño, construcción, testeo y despliegue. Es un mini ciclo de cascada. Cada iteración dura entre 2 y 6 semanas, esto permite que el usuario este probando mucho antes en comparación a cascada (interacción con el usuario constante). Ante cualquier error que ocurra, se esta a tiempo de arreglarlo.
+
+\section{Casos de Uso 2.0}
+Un slice es una porción de un caso de uso. Estos son hechos durante cada iteración del desarrollo iterativo e incremental.
+% todo: completar...
+
+Busca partir los casos de uso en porciones mas pequeñas, para que sean mas implementables en el lapso de 2 a 6 semanas. Proporciona mucha versatilidad.
+
+\section{Historias de usuario}
+Las historias de usuario son descripciones breves y simples de una funcionalidad, escritas desde la perspectiva que necesita una determinada capacidad del sistema. \textit{Ej. Usuario, área de negocio, o cliente}
+
+\subsection*{Componentes}
+\begin{itemize}
+    \item ID
+    \item Titulo: Texto descriptivo de la historia
+    \item Descripción: Como [rol], quiero [objetivo], para poder [beneficio]
+    \item Estimación: Cuanto va a llevar implementarla (conocida también como puntos de historia)
+    \item Valor: valor numérico que aporta importancia a la historia, generalmente de 1 a 5. El objetivo es maximizar el valor y la satisfacción percibida por el cliente o usuario en cada iteración.
+    \item Dependencias: Procurar que no existe dependencia entre historias, los que no sea posible indicarla.
+    \item Pruebas de integración: Clarifican el contexto en que ocurre la historia, y facilitan saber cuando están terminadas las historias.
+\end{itemize}
+
+Ej. 
+\begin{itemize}
+    \item COMO usuario QUIERO poder acceder al catalogo de cursos PARA poder tomar decisiones de los cursos en los cuales inscribirme.
+    \item COMO usuario QUIERO poder buscar transacciones PARA poder detectar gastos innecesarios en mi cuenta durante cierto periodo de tiempo.
+\end{itemize}
+
+\subsection*{Buenas practicas}
+\begin{itemize}
+    \item Deben mapear a \textbf{una sola} funcionalidad del producto, software.
+    \item Es una buena practica usar personajes en vez de roles. \textit{Ej. Alumno en vez de usuario}.
+    \item Se hacen en fichas.
+\end{itemize}
+
+\subsubsection*{INVEST}
+\begin{itemize}
+    \item Independiente: No deben depender unas de otras, si ocurre tratar de dividir o combinar.
+    \item Negociable: Deben ser negociables sus detalles entre cliente/usuario en la <<conversación>>.
+    \item Valor: Tiene que ser valiosa para el cliente.
+    \item Estimable: Debe ser estimada con la precisión suficiente para ayudar al cliente o usuario a priorizar y planificar su implementación.
+    \item Pequeña (Small): Como máximo una iteración.
+    \item Testeable: Deben poder probarse y saber que la historia se completo con éxito.
+\end{itemize}
+
+\subsection*{Criterios de aceptación}
+Son una serie de preceptos que validan la implementación de la historia de usuario.
+\begin{itemize}
+    \item Ayudan al desarrollador a implementarla de forma correcta.
+    \item Se pueden mapear sobre los tests de funcionalidades.
+    \item Ayudan a QA para dar el OK a la historia.
+    \item Definen junto a la descripción la funcionalidad a implementar.
+    \item Tienen solo 2 resultados: ÉXITO o FRACASO.
+    \item Deben ser interpretados de una única manera por N personas, no deben ser ambiguos.
+    \item Deben ser verificables por el cliente rápidamente.
+    \item Tienen que ser completos, el grupo debe incluir todas las funcionalidades.
+\end{itemize}
+
+Ej.
+\begin{itemize}
+    \item El nombre de usuario DEBE tener un valor, en caso contrario se mostrara el mensaje de error pertinente.
+    \item Si el usuario y la contraseña son correctos, el usuario podrá acceder a la aplicación.
+\end{itemize}
+
+\subsection*{Conversaciones}
+En el mundo ideal los clientes tienen una idea muy clara de lo que quieren desde el principio, y nos lo cuentan con lujo de detalles sin dejarlo en el tintero. En la realidad esto no pasa.
+
+Una historia de usuario abrirá normalmente una conversación entre el equipo de desarrollo y el cliente. Las historias de usuario no cambian a nivel conceptual, son las conversaciones las que las volverán mas detalladas.
+
+
+\section*{Quinta clase}
+
+\section{Modelo Conceptual}
+Dentro de los modelos de requerimientos.
+
+\subsection{Diagramas de clases conceptuales}
+Las clases representan los bloques de construcción mas importantes de cualquier sistema.
+
+\begin{itemize}
+    \item Nombre
+    \item Atributos: propiedades del elemento que estamos modelando
+    \item Operaciones (Métodos): implementación de un servicio
+    \item Responsabilidades: lo que le corresponde realizar a la clase,las obligaciones que deben realizar las clases para cumplir con los requerimientos. \textit{Ej. determinar el riesgo de un pedido de un cliente - manejar criterios de fraude específicos del cliente}
+\end{itemize}
+
+% imagen de clase
+
+Es buena practica iniciar el modelaje especificando las responsabilidades, dejando para después los atributos y operaciones. Deben de contener al menos 'una' responsabilidad. (tratar de respetar el Single Responsability Principle)
+
+Las clases conceptuales (de entidad), son las necesarias para cumplir con las responsabilidades asignadas al sistema.
+
+Clase de entorno, maneja el dialogo entre el sistema y el medio externo.
+
+Para identificar clases, se puede usar la regla practica, usar sustantivos o frases sustantivas que describen responsabilidades del sistema. La otra forma es con tarjetas CRC (Colaboration Responsability Card), que es una técnica de modelado para refinamiento de clases.
+
+De aca se tiene una lista inicial de clases, y con esto se hace un diagrama de clases participantes (sin colaboraciones).
+
+\subsubsection*{Relaciones entre clases}
+\begin{itemize}
+    \item De asociación, es entre instancias que se encuentran en un mismo nivel. Tiene nombre de asociación, rol, multiplicidad. Existen la simple, de agregación, de composición y clase de asociación
+    
+    \begin{itemize}
+        \item Simple, relación de asociación entre objetos de una clase. \textit{Ej, Nombre de asociación: Emplea} Recta que une las dos clases. El rol puede omitirse si es trivial. La multiplicidad es obligatoria.
+        \item Agregación, se tiene una clase que representa un todo, y otra una parte. Si se elimina una instancia del todo, las partes siguen existiendo. Tiene un rombo vacío del lado del todo.
+        \item Composición, fuerte relación de pertenencia y vida entre un todo y las partes. Si se elimina e todo, las partes asociadas mueren. Rombo negro del lado del todo. Un todo puede tener muchas partes, pero no puede haber una parte de muchos todos.
+        \item Clase de asociación, es una nueva clase que surge de la asociación de dos clases, contiene elementos que no le son propios a las clases relacionadas. Existen una sola vez, si se repite se convierte asociación simple.
+    \end{itemize}
+    
+    \item De generalización, especialización: Es una relación que conecta una clase general con una mas especializada. (Subclase) La clase hijo siempre es instanciable, la padre puede o no serlo. Si no lo es, se dice abstracta. el discriminador indica en base a que especializo.
+    
+    \item De uso, dependencia,
+    \item De realización, interfaces
+\end{itemize}
+
+
+\section*{Sexta clase}
+\section{Diagramas de interacción entre objetos}
+La interacción entre objetos comprende el conjunto de mensajes que son intercambiados entre objetos.
+
+Estos diagramas describen la manera en que colaboran grupos de objetos para cierto comportamiento. Se usan cuando se quiere ver el comportamiento en un escenario predefinido.
+
+Ambos tipos de diagramas son equivalentes. De cada uno puedo llegar al otro. Se enumeran los mensajes en ambos.
+
+\subsection{Diagrama de secuencia}
+Muestran el orden temporal de los mensajes y el paso de mensajes. 'Perspectiva cronológica de las interacciones'.
+
+% diagrama
+
+\subsection{Diagrama de colaboración}
+Muestra la organización estructural de los objetos que envían y reciben mensajes. 'Perspectiva espacial de las interacciones'
+
+Linea entre objetos que intercambian mensajes y otra linea indicando la dirección.
+
+% diagrama
 
 
 
 \newpage
-
-
-
-
 
 \section{Bibliografía de la materia}
 
