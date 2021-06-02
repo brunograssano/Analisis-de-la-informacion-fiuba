@@ -29,10 +29,9 @@
     Curso González \\
     1C 2021 
     \vfill
-    \begin{tabular}{ | l | l | } % Datos del alumno
+    \begin{tabular}{ | l | l | }
       \hline
       Alumno: & Grassano, Bruno \\ \hline
-      Número de padrón: & 103855 \\ \hline
       Email: & bgrassano@fi.uba.ar \\ \hline
   	\end{tabular}
     \vfill
@@ -52,13 +51,6 @@ El presente archivo contiene los apuntes que fueron tomados a lo largo de la cur
 
 
 \section*{Primera clase}
-
-    \begin{itemize}
-        \item Introducción a la Ing. Software: Definiciones y metodología
-        \item Modelos bajo el paradigma de OO
-        \item Modelos de objetivos: Objetivo, alcance y hipótesis de un sistema
-    \end{itemize}
-
 \section{Introducción a la Ing. Software}
 Definición: \textit{'Es la aplicación de un enfoque sistemático disciplinado y cuantificable al desarrollo, operación y mantenimiento de productos de software.'} (IEEE 1993) (Enfoque ingenieril)
 
@@ -83,6 +75,15 @@ Contiene 3 partes. Los modelos, procesos, y las herramientas de un desarrollo de
     \end{figure}
 
 \subsection{Modelos}
+
+
+\begin{figure}[!htb]
+    \centering
+    \hspace*{-2.8cm}
+    \includegraphics[width=1.3\textwidth]{Imagenes/ModelosOO.png}
+    \caption{Modelos OO diferenciados en los tipos del QUE y del COMO}
+\end{figure}
+
 \subsubsection*{¿Que es un modelo?}
 Es una simplificación de la realidad. Como la realidad es compleja le aplicamos abstracción, para incluir elementos que tienen mucha influencia y omitir los relevantes.
 
@@ -105,7 +106,7 @@ Es una simplificación de la realidad. Como la realidad es compleja le aplicamos
         \item Mantenimiento. \textit{Correctivo (Corregir defectos de diseño) y evolutivo (Adaptar a los nuevos procesos)}
     \end{itemize}
 
-\subsubsection{Principios de la modelización}
+\subsubsection*{Principios de la modelización}
     \begin{itemize}
         \item La elección de que modelos crear tiene una gran influencia sobre como se aborda un problema y como se da la solución.
         \item Tienen distintos niveles de precisión.
@@ -114,7 +115,7 @@ Es una simplificación de la realidad. Como la realidad es compleja le aplicamos
         \item Tener un Objetivo y alcance claro.
     \end{itemize}
 
-\subsubsection{Beneficios de la modelización}
+\subsubsection*{Beneficios de la modelización}
     \begin{itemize}
         \item Forma de visualizar necesidades y requerimientos contra costos reales antes de comenzar el desarrollo.
         \item Se trabaja en un alto nivel de abstracción
@@ -156,6 +157,7 @@ Tiene que responder a 4 preguntas: ¿Quien lo hace?, ¿Que lo hace?, ¿Como lo h
 De forma tal de obtener un producto de calidad, dentro de plazos y presupuestos predecibles.
 
 \section{Modelo de Objetivos}
+Dentro de los modelos de requerimientos.
 \subsection{Objetivo del sistema}
 Define lo que el sistema va a hacer (objetivo).
 Es una descripción breve con alto nivel de abstracción, sobre \textbf{que} se requiere automatizar con el sistema, declarando los 'macroprocesos'.
@@ -191,7 +193,7 @@ Pueden ser establecidas por políticas de la empresa, normativas legales. Supues
 
 Estos pueden darse por falta de relevamiento por determinadas circunstancias. \textit{Ej. El cliente se lo olvido, es trivial, no lo sabe, lo oculta}
 
-\section{Caso de estudio: Airbus A320}
+\subsection{Caso de estudio: Airbus A320}
 
 Habilitar la aceleración en reversa. El avión al momento de frenar activa este mecanismo, abriendo unos alerones en las turbinas.
 
@@ -203,18 +205,10 @@ Se debería de haber tenido en cuenta el sensor de giro, de peso, y de altura.
 
 Sistema de estudio: software, los 3 sensores, el servo-mecanismo reversa.
 
-
+\newpage
 \section*{Segunda clase}
-
-    \begin{itemize}
-        \item Modelo de negocio.
-        \item Mapa de procesos.
-        \item Mapa de sistemas.
-        \item Diagrama de actividad.
-    \end{itemize}
-
 \section{Modelo de negocio}
-
+Dentro de los modelos de requerimientos.
 \subsection{Mapa de procesos}
     \begin{itemize}
         \item Modeliza los procesos que una organización tiene para llevar adelante sus funciones.
@@ -267,12 +261,13 @@ Mapea determinados macroprocesos, y va diciendo cuales son los sistemas que van 
 Una actividad esta compuesta por un conjunto de tareas a ser realizadas. Verbo $+$ objeto, \textit{ej. verificar pedido}. No hay que asociarlas con actividades físicas, si con procesos y/o reglas de negocio que luego podrán ser (o no) automatizadas.
 
 
-
-\section*{Tercera clase}
+\newpage
+\section*{Tercera y cuarta clase}
 
 \section{Modelo de comportamiento}
-\subsection*{Casos de uso}
+Dentro de los modelos de requerimientos.
 
+\subsection{Casos de uso}
 Hay tres componentes en el modelo de comportamiento.
 \begin{itemize}
     \item Actores, representa algo o alguien (una persona, dispositivo, otro sistema) que interactúa con el sistema sin ser parte de el. Puede ingresar y/o recibir información del sistema. Se identifican fácilmente a partir de los roles representados por la swimline's. Se pueden identificar respondiendo a las siguientes preguntas: ¿Quien esta interesado en cierto requerimiento? ¿En que lugar de la organización se usa el sistema? ¿Quien se beneficiara con el uso del sistema? ¿Quien mantendrá el sistema? Etc.
@@ -292,10 +287,14 @@ Hay tres componentes en el modelo de comportamiento.
     \item Diagramas de casos de uso, muestrea un conjunto de casos de uso, actores y sus relaciones. Permite tener una visualización del comportamiento de un sistema. En los diagramas de caso de uso general, se tiene una visión de alto nivel de todo el sistema, hay que tener 'todos' los actores y 'todos' los casos de uso del sistema. Hay actores primarios (izquierda diagrama)(disparan casos de uso) y actores secundarios (derecha diagrama)(no disparan casos de uso). Puede darse que un actor sea principal y secundario (esta en ambos lados).
 \end{itemize}
 
-%imagen actor (palito)
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9 \textwidth]{Imagenes/CasoDeUso.png}
+    \caption{Ejemple de diagrama de casos de uso.}
+\end{figure}
 
 
-\subsection*{Documentación de casos de uso}
+\subsection{Documentación de casos de uso}
 Tienen una descripción del caso, y flujo de eventos. (pre-condiciones, flujo principal, subflujos, flujos de excepción, post-condiciones)
 
 Las pre-condiciones son las acciones que deben haber sido ejecutadas previas a la ejecución del caso de uso. 
@@ -339,7 +338,7 @@ Ej. Registrar curso a dictar.
 \end{enumerate}
 
 
-\subsection*{Tipos de relaciones}
+\subsection{Tipos de relaciones}
 \begin{itemize}
     \item De asociación entre actores y casos de uso.
     \item De dependencia entre casos de uso. 2 tipos, de inclusión <<INCLUDE>> y de extensión <<EXTEND>>
@@ -351,28 +350,36 @@ Ej. Registrar curso a dictar.
     \item De generalización/especialización entre actores/entre casos de uso.
 \end{itemize}
 
-%imagen <<include>>
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/IncludeCasoDeUso.png}
+    \caption{Ejemplo con <<Include>>}
+\end{figure}
 
-\section*{Cuarta clase}
-\subsection*{Caso de uso: Actor temporal}
-Indica el paso del tiempo, tiene una flecha punteada hacia el caso de uso. %agregar imagen
+\subsection{Caso de uso: Actor temporal}
+Indica el paso del tiempo, tiene una flecha punteada hacia el caso de uso. \textit{Ej. Mensualmente, Diariamente, Semanalmente, Cada X tiempo}
 
-\subsection*{Caso de uso: Relaciones de especialización/generalización}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9 \textwidth]{Imagenes/ActorTemporalCasoDeUso.png}
+    \caption{Un actor temporal: Mensualmente}
+\end{figure}
+
+\subsection{Caso de uso: Relaciones de especialización/generalización}
 Son actores que pueden tener una flecha hacia otro actor, para indicar que puede iniciar los casos de uso de ese otro actor.
 
-\section{Proceso de desarrollo iterativo e incremental}
+\subsection{Proceso de desarrollo iterativo e incremental}
 Voy realizando pequeñas partes del proyecto total. En cada iteración se van capturando requerimientos, análisis, diseño, construcción, testeo y despliegue. Es un mini ciclo de cascada. Cada iteración dura entre 2 y 6 semanas, esto permite que el usuario este probando mucho antes en comparación a cascada (interacción con el usuario constante). Ante cualquier error que ocurra, se esta a tiempo de arreglarlo.
 
-\section{Casos de Uso 2.0}
+\subsection{Casos de Uso 2.0}
 Un slice es una porción de un caso de uso. Estos son hechos durante cada iteración del desarrollo iterativo e incremental.
-% todo: completar...
 
 Busca partir los casos de uso en porciones mas pequeñas, para que sean mas implementables en el lapso de 2 a 6 semanas. Proporciona mucha versatilidad.
 
-\section{Historias de usuario}
+\subsection{Historias de usuario}
 Las historias de usuario son descripciones breves y simples de una funcionalidad, escritas desde la perspectiva que necesita una determinada capacidad del sistema. \textit{Ej. Usuario, área de negocio, o cliente}
 
-\subsection*{Componentes}
+\subsubsection*{Componentes}
 \begin{itemize}
     \item ID
     \item Titulo: Texto descriptivo de la historia
@@ -389,7 +396,14 @@ Ej.
     \item COMO usuario QUIERO poder buscar transacciones PARA poder detectar gastos innecesarios en mi cuenta durante cierto periodo de tiempo.
 \end{itemize}
 
-\subsection*{Buenas practicas}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/UserStory.png}
+    \caption{Modelo de una historia de usuario}
+\end{figure}
+
+
+\subsubsection*{Buenas practicas}
 \begin{itemize}
     \item Deben mapear a \textbf{una sola} funcionalidad del producto, software.
     \item Es una buena practica usar personajes en vez de roles. \textit{Ej. Alumno en vez de usuario}.
@@ -397,6 +411,7 @@ Ej.
 \end{itemize}
 
 \subsubsection*{INVEST}
+Es un metodo para escribir buenas historias de usuario.
 \begin{itemize}
     \item Independiente: No deben depender unas de otras, si ocurre tratar de dividir o combinar.
     \item Negociable: Deben ser negociables sus detalles entre cliente/usuario en la <<conversación>>.
@@ -406,7 +421,7 @@ Ej.
     \item Testeable: Deben poder probarse y saber que la historia se completo con éxito.
 \end{itemize}
 
-\subsection*{Criterios de aceptación}
+\subsubsection*{Criterios de aceptación}
 Son una serie de preceptos que validan la implementación de la historia de usuario.
 \begin{itemize}
     \item Ayudan al desarrollador a implementarla de forma correcta.
@@ -425,7 +440,7 @@ Ej.
     \item Si el usuario y la contraseña son correctos, el usuario podrá acceder a la aplicación.
 \end{itemize}
 
-\subsection*{Conversaciones}
+\subsubsection*{Conversaciones}
 En el mundo ideal los clientes tienen una idea muy clara de lo que quieren desde el principio, y nos lo cuentan con lujo de detalles sin dejarlo en el tintero. En la realidad esto no pasa.
 
 Una historia de usuario abrirá normalmente una conversación entre el equipo de desarrollo y el cliente. Las historias de usuario no cambian a nivel conceptual, son las conversaciones las que las volverán mas detalladas.
@@ -446,17 +461,27 @@ Las clases representan los bloques de construcción mas importantes de cualquier
     \item Responsabilidades: lo que le corresponde realizar a la clase,las obligaciones que deben realizar las clases para cumplir con los requerimientos. \textit{Ej. determinar el riesgo de un pedido de un cliente - manejar criterios de fraude específicos del cliente}
 \end{itemize}
 
-% imagen de clase
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/Clase.png}
+    \caption{Modelo de una clase para el diagrama.}
+\end{figure}
 
 Es buena practica iniciar el modelaje especificando las responsabilidades, dejando para después los atributos y operaciones. Deben de contener al menos 'una' responsabilidad. (tratar de respetar el Single Responsability Principle)
 
-Las clases conceptuales (de entidad), son las necesarias para cumplir con las responsabilidades asignadas al sistema.
+\subsubsection*{Tipos de clase: MVC}
+\begin{itemize}
+    \item Las clases conceptuales (de entidad), son las necesarias para cumplir con las responsabilidades asignadas al sistema.
+    \item Clase de entorno, maneja el dialogo entre el sistema y el medio externo. Modelan las interfaces del sistema.
+    \item Clases de control, coordinan los eventos necesarios para realizar el comportamiento especificado en un caso de uso (Representan su dinámica).
+\end{itemize}
 
-Clase de entorno, maneja el dialogo entre el sistema y el medio externo.
+
+\subsubsection*{Identificación}
 
 Para identificar clases, se puede usar la regla practica, usar sustantivos o frases sustantivas que describen responsabilidades del sistema. La otra forma es con tarjetas CRC (Colaboration Responsability Card), que es una técnica de modelado para refinamiento de clases.
 
-De aca se tiene una lista inicial de clases, y con esto se hace un diagrama de clases participantes (sin colaboraciones).
+De acá se tiene una lista inicial de clases, y con esto se hace un diagrama de clases participantes (sin colaboraciones).
 
 \subsubsection*{Relaciones entre clases}
 \begin{itemize}
@@ -471,10 +496,24 @@ De aca se tiene una lista inicial de clases, y con esto se hace un diagrama de c
     
     \item De generalización, especialización: Es una relación que conecta una clase general con una mas especializada. (Subclase) La clase hijo siempre es instanciable, la padre puede o no serlo. Si no lo es, se dice abstracta. el discriminador indica en base a que especializo.
     
-    \item De uso, dependencia,
-    \item De realización, interfaces
+    \item De uso, dependencia, conoce a determinada clase ya que la usa en algún momento, puede ser porque se la pasan por parámetro. No guarda una referencia a ese objeto.
+    \item De realización, indica la implementación de interfaces.
 \end{itemize}
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes/ClassDiagramArrowTypes.png}
+    \caption{Los tipos de flechas}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes/ClaseDeAsociacion.png}
+    \caption{Ejemplo de una clase de asociación.}
+\end{figure}
+
+
+\newpage
 
 \section*{Sexta clase}
 \section{Diagramas de interacción entre objetos}
@@ -487,14 +526,67 @@ Ambos tipos de diagramas son equivalentes. De cada uno puedo llegar al otro. Se 
 \subsection{Diagrama de secuencia}
 Muestran el orden temporal de los mensajes y el paso de mensajes. 'Perspectiva cronológica de las interacciones'.
 
-% diagrama
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/DiagramaDeSecuencia.png}
+    \caption{Elementos de un diagrama de secuencia}
+\end{figure}
 
 \subsection{Diagrama de colaboración}
 Muestra la organización estructural de los objetos que envían y reciben mensajes. 'Perspectiva espacial de las interacciones'
 
 Linea entre objetos que intercambian mensajes y otra linea indicando la dirección.
 
-% diagrama
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes/CollaborationDiagram.png}
+    \caption{Modelo de un diagrama de colaboración}
+\end{figure}
+
+\newpage
+
+\section*{Séptima clase}
+\section{Modelo de Estado de Objetos}
+Esta dentro de los modelos de requerimientos.
+
+\subsection{Estado}
+Es una condición o una situación en la vida de un objeto durante la cual satisface una condición, realiza alguna actividad o espera algún evento.
+
+Tienen varias partes: nombre, transiciones, condiciones de transición, acciones, transiciones temporizadas, sub-estados, super-estados.
+
+\subsection{Diagrama de estados}
+Muestra los cambios de estado existentes en un objeto durante su ciclo de vida. Muestra el comportamiento que especifica las secuencias de estados por las que pasa un objeto. También muestran como se reflejan los cambios que se producen.
+
+Estos diagramas son grafos dirigidos, tienen un estado inicial y final (pueden ser varios estados finales) diferenciados del resto. La transición entre estados es instantánea y se debe a la ocurrencia de un evento. (La definición de autómata básicamente.)
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/StateDiagram.png}
+    \caption{Diagrama de estados generico}
+\end{figure}
+
+Describe el comportamiento de un objeto a través de varios casos de uso. Es útil combinarlo con otros diagramas, \textit{Ej. Diagramas de secuencia}.
+
+\begin{itemize}
+    \item Acciones: es la solicitud de un servicio a otro objeto. \textit{Ej. Evento[condición]/Acción - La acción podría ser otroObjeto.operacion()} Pueden tener palabras claves, Entry como una acción a ejecutar al ingresar al estado, un Exit como operación al salir, y un Do que es una acción a realizar mientras esta en el estado. Estas palabras clave están dentro del grafo, el estado. Pueden tener mas de uno.
+    \item Transiciones Temporizada: indican un tiempo para el cambio de estado si no ocurre el evento que debía de ocurrir \textit{Ej. "después de 30 segundos", puede ir si se anula una transacción porque no se pago}.
+    \item Relaciones de Jerarquía - Superestados - Subestados: Buscan reducir la complejidad de los diagramas generalizando los estados. la entrada puede hacia estas generalizaciones puede ir a los estados específicos con una flecha directo, o un nuevo circulo indicando el comienzo (es preferible el circulo para que no se sepa desde los niveles superiores.).
+\end{itemize}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/StateDiagramWithActions.png}
+    \caption{Diagrama de estados con acciones en State B}
+\end{figure}
+
+Antes de hacer el diagrama hay que contextualizar sobre el objeto al que le vamos a hacer el diagrama.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/StateDiagramExample.png}
+    \caption{Ejemplo de un diagrama de estados}
+\end{figure}
+
 
 
 
