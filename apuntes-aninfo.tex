@@ -9,7 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{float}
-
+\usepackage[table,xcdraw]{xcolor}
 \pagestyle{fancy} % Encabezado y pie de página
 \fancyhf{}
 \fancyhead[L]{Apuntes Análisis de la información}
@@ -43,7 +43,7 @@
 \newpage
 
 \section{Introducción}\label{sec:intro}
-El presente archivo contiene los apuntes que fueron tomados a lo largo de la cursada de la materia análisis de la información (7509) en el curso del profesor González.
+El presente archivo contiene los apuntes que fueron tomados a lo largo de la cursada de la materia análisis de la información (7509) en el curso del profesor González - Turri.
 
 % Grupos 5/6
 % Final exposición de TP para coloquio. Evaluación de la exposición, calidad del trabajo, presentación, algunas preguntas teóricas individuales (solo sobre lo de los lunes)
@@ -587,17 +587,190 @@ Antes de hacer el diagrama hay que contextualizar sobre el objeto al que le vamo
     \caption{Ejemplo de un diagrama de estados}
 \end{figure}
 
+%%%%% Storytelling
+% Mas ludico
+% Orientado a una narrativa
+% Es el arte de contar historias, recreamos historias para poner en contexto y comunicar las necesidades de nuestros usuarios o beneficiarios de los resultados de nuestro sistema
+% Se busca generar una conexion con una persona, para ver si entendimos las necesidades.
+% Lenguaje sensorial para persuadir al publico.
+% Tecnica: Tiene que tener historia, contenida, experiencia/s, ser creativa. Marketing, emocion, compartible, comunicable.
+% Estructura basica: Tema - Argumento: con una cronologia como van sucediendo las cosas - Trama: como articulo los hechos en esta historia, la estructura que va a tener - Sentido: para que la voy a contar, por que la transmito
+% 2 componentes: Tiene una parte racional (de los hechos), tangible. Se mezcla con la parte sentimental (mezclar con la parte mas humana y sentimental)
+% Tecnica narrada y oral. En el TP la reforzamos con la tecnica Visual Thinking.
+% Visual Thinging: Mientras voy narrando (storytelling) voy haciendo graficos. 
+% Facilitacion Grafica: dibujos sencillos y basicos para que los conceptos se entiendan y comprendan mas facil.
+%%% Ejemplo
+% 
+
+\section*{Octava y novena clase}
+\section{Lean UX}
+Es 'dar luz a la verdadera naturaleza de nuestro trabajo y con \emph{menos enfasis en los entregables} y con mayor foco en la experiencia que esta siendo diseñada (la solucion)'.
+
+Se remonta al método Lean Startup
+\subsection{Lean Startup}
+Tiene cinco postulados.
+\begin{enumerate}
+    \item Hay emprendedores en todos lados.
+    \item Emprender es administrar. (En su sentido mas amplio)
+    \item Generar conocimiento valido.
+    \item Innovación medible. (Si no podemos medir, no podemos controlar el éxito del proyecto)
+    \item Proceso Build-Measure-Learn (Construir-Medir-Aprender).
+\end{enumerate}
+
+\subsection{Lean UX vs Diseño Centrado en el Usuario (DCU)}
+
+\begin{center}
+\begin{table}[!htb]
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{FFFE65} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFE65}Lean UX} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFE65}DCU} \\ \hline
+Generar Conocimiento Validado                         & Hacer pruebas con usuarios                       \\ \hline
+Innovacion Medible                                    & Tomar metricas                                   \\ \hline
+Pivotear                                              & Iterar                                           \\ \hline
+MVP(Minium Viable Product)                            & Prototipado iterativo                            \\ \hline
+Costumer Development                                  & Trabajo de campo                                 \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\newpage
+
+\subsection{Build-Measure-Learn}
+Es un ciclo iterativo en el cual se parte de determinadas ideas, se construye rapidamente (code faster) un prototipo, se hacen mediciones (measure faster), y con estas mediciones se puede aprender (learn faster). Una vez completada la vuelta se repite.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/Build-Measure-Learn.png}
+    \caption{Ciclo que se sigue}
+\end{figure}
+
+\subsection*{Consideraciones al emprender un proyecto}
+
+\begin{itemize}
+    \item Hay que saber distinguir entre lo que quiere el emprendedor y lo que quieren los usuarios.
+    \item Los emprendedores son los padres de la 'criatura'. La capacidad de juicio critico esta sesgado. El que tiene que opinar del producto son los usuarios, tienen que dar el juicio.
+    \item Las personas 'dicen' es diferente a lo que las personas 'hacen'. (Tenerlo en cuenta cuando se hacen las pruebas, se mejora cuando se tiene en cuenta lo que hacen) (Observar las conductas de las personas) \textit{Ej. Focus Group}
+    \item La capacidad de 'resiliencia' de los emprendedores, muy necesaria. Se necesita una alta capacidad de 'resiliencia'.
+    \item Hay que poder medir el 'valor' que perciben los clientes a nuestro producto. No es agregar \emph{features} al producto continuamente si es que los clientes no lo perciben.
+    \item Hay que poder identificar 'quienes' van a ser nuestros futuros usuarios.
+    \item Siempre se va a tener un alto grado de incertidumbre.
+    \item Nosotros como emprendedores, no somos los usuarios pero decidimos como si lo fuéramos, esto se debe de evitar. 
+\end{itemize}
+
+\subsection{Metodologías Ágiles}
+
+\section{Scope Canvas}
+
+El Scope Canvas combina elementos que ya se venían trabajando en proyectos de lean UX de forma separada. Nos permite establecer formas de observar el exito del proyecto. Es una foto del momento.
+
+
+El Scope Canvas no nos dice como vamos a trabajar.
+
+\subsection{Plantilla}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/ScopeCanvas.jpg}
+    \caption{Plantilla de Scope Canvas}
+\end{figure}
+
+\begin{itemize}
+    \item Hay que definir todas las partes que aparecen en la imagen.
+    \item Con Scope Canvas se logran equipos de trabajo mas alineados en torno a las metas comunes. Que se tenga una cultura mas explicita.
+    \item La visión de los actores clave desde el principio del producto que se esta ideando.
+\end{itemize}
+
+\subsubsection*{El propósito}
+
+\begin{itemize}
+    \item ¿que hace que esto valga la pena? ¿Por que hacemos esto? ¿Que nos mueve?
+    \item Nos mueve hacer esto porque...
+    \item El propósito debe servir a la organización y a los usuarios por igual, muy ambicioso y muy estimulante. Hay que ser sincero con las motivaciones personales.
+    \item \textit{Ej. Que todos puedan ahorrar energía - Conectar al mundo en un instante - Una sociedad mas respetuosa - Organizar la información del mundo (Google)}
+\end{itemize}
+
+\subsubsection*{Necesidades}
+
+\begin{itemize}
+    \item Esta en la parte de los usuarios. ¿Que problemas y/u oportunidades insatisfechas tenemos el potencial de atender? 
+    \item Nuestros usuarios necesitan/desean...
+    \item Puede haber varios segmentos de usuarios. Para proyectos multi-sided se defina al menos una necesidad por cada segmento de usuario o cliente.
+    \item Hay que evitar mencionar posibles soluciones al declarar necesidades. (Evitar el ¿Como?)
+    \item Los emprendedores deben detectar estas oportunidades. Son valor agregado para los usuarios que ellos aun no visualizan. Para validar las necesidades hay que investigar, crear historias (storytelling), y sintetizar.
+    \item \textit{Ej. Sacar su certificado sin ir a las oficinas - Ahorrar energía - Aprender un nuevo idioma}
+\end{itemize}
+
+\subsubsection*{Objetivos}
+
+\begin{itemize}
+    \item Son del negocio a corto plazo. ¿Cuales son los objetivos del proyecto? ¿Que esperamos obtener? ¿cual es la prioridad?
+    \item El objetivo es...
+    \item Los objetivos deben ser cuantificables y medibles. No necesariamente hay que determinar uno con numero. Hay que evitar los objetivos vagos (no se pueden medir). Los objetivos deben relacionarse con la adopcion de usuarios, no son solo internos.
+    \item En este momento hay que preguntarse como se sustentara el proyecto. Puede ser útil realizar el Buisness Model Canvas antes de llenar esa sección.
+    \item \textit{Ej. Reducir el tiempo de compra en un 50\% - Crecer en un 25\% anual}
+\end{itemize}
+
+\subsubsection*{Motivadores}
+
+\begin{itemize}
+    \item Se tienen motivaciones de mediano y largo plazo. ¿Que mejora entregamos a los usuarios para satisfacer sus necesidades? 
+    \item Los usuarios adoptaran el producto si les entregamos...
+    \item Las necesidades y los motivadores están relacionados.
+    \item Los futuros usuarios ya están intentado satisfacer sus necesidades. Antes de definir los motivadores debemos investigar cuales son las maneras actuales de satisfacer dichas necesidades, y de que forma es mejor nuestra idea.
+    \item La innovación debe reflejarse en los motivadores. 
+    \item Los motivadores los validamos a través de las acciones. Si el motivador es correcto, los usuarios adoptan el producto realizando acciones.
+\end{itemize}
+
+\subsubsection*{Acciones}
+
+\begin{itemize}
+    \item ¿Que acciones especificas de los usuarios implican conversión? ¿Como sabremos si estamos entregando los motivadores correctos?
+    \item Esperamos que los usuarios...
+    \item Las acciones tienen que ser cruciales y observables.
+    \item \textit{Ej. Comprar- Transportarse en bicicleta en lugar de en auto - Registrarse}
+\end{itemize}
+
+\subsubsection*{Impacto}
+
+\begin{itemize}
+    \item El impacto es a mediano y largo plazo. ¿cual es el potencial del proyecto si nos va bien? ¿En que esperamos convertirnos si nos va bien?
+    \item Nuestras metas de largo plazo son...
+    \item Es el impacto en el negocio. Nos permite visualizar el éxito de largo plazo del proyecto. Nos acerca al propósito. Siempre es observable por terceros. tiene un efecto poderoso en la motivación.
+    \item No hay que mezclar impactos con objetivos. Impacto es observable, el objetivo es medible.
+    \item El impacto debe reflejas un éxito masivo, a gran escala.
+    \item Hay que prestar atención a los impactos no esperados y corregirlos.
+\end{itemize}
+
+\subsubsection*{Métricas}
+
+\begin{itemize}
+    \item ¿Como sabemos que los objetivos se están cumpliendo> ¿Donde medimos? ¿Como medimos?
+    \item Mediremos ... para saber si estamos logrando el objetivo
+    \item Tienen que estar expresadas en datos. Nos cuentan la historia de como le fue a nuestros usuarios. No hay que engañarse.
+    \item Las métricas deben responder a las acciones de los usuarios y a los objetivos que estamos siguiendo.
+    \item \textit{Ej. Recurrencia de uso - tiempo para completar una tarea - SUS (system Usability Scale) - NPS (Net Promoter Score)}
+\end{itemize}
+
+\subsection{Reglas}
+\begin{itemize}
+    \item Se usan \textit{post-its} y lapices grandes. Se debe de ser simple y breve. Hay que debatir, no juzgar.
+    \item Dura típicamente 2 horas. Máximo 15 personas.
+    \item El debate permite simplificar todos los \emph{post-its}.
+\end{itemize}
+
 
 
 
 \newpage
 
 \section{Bibliografía de la materia}
-
 \begin{itemize}
     \item The Unified Modeling Language Reference Manual, Rumbauch, Jacobson, Booch
     \item The Unified Software Development Process, Rumbauch, Jacobson, Booch
     \item UML distilled, Third Edition, Fowler
+    \item Leax Ux: Applying Lean Principles to improve user experience, Jeff Gothelf, Josh Seiden
 \end{itemize}
+
 
 \end{document}
