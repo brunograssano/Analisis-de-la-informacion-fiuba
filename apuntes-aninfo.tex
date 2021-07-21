@@ -29,10 +29,10 @@
     Curso González \\
     1C 2021 
     \vfill
-    \begin{tabular}{ | l | l | }
+    \begin{tabular}{ | l | }
       \hline
-      Alumno: & Grassano, Bruno \\ \hline
-      Email: & bgrassano@fi.uba.ar \\ \hline
+      Grassano, Bruno \\ \hline
+      bgrassano@fi.uba.ar \\ \hline
   	\end{tabular}
     \vfill
     \vfill
@@ -45,10 +45,15 @@
 \section{Introducción}\label{sec:intro}
 El presente archivo contiene los apuntes que fueron tomados a lo largo de la cursada de la materia análisis de la información (7509) en el curso del profesor González - Turri.
 
+\subsection*{Contenido}
+
+\subsection*{Practica}
+
 % Grupos 5/6
 % Final exposición de TP para coloquio. Evaluación de la exposición, calidad del trabajo, presentación, algunas preguntas teóricas individuales (solo sobre lo de los lunes)
 % Nota final: Conceptual (Alejandro sobre el trabajo) + Exposición + Respuestas a preguntas teóricas
 
+\newpage
 
 \section*{Primera clase}
 \section{Introducción a la Ing. Software}
@@ -368,7 +373,7 @@ Indica el paso del tiempo, tiene una flecha punteada hacia el caso de uso. \text
 \subsection{Caso de uso: Relaciones de especialización/generalización}
 Son actores que pueden tener una flecha hacia otro actor, para indicar que puede iniciar los casos de uso de ese otro actor.
 
-\subsection{Proceso de desarrollo iterativo e incremental}
+\subsection{Proceso de desarrollo iterativo e incremental}\label{sec:procesoIterativoIncremental}
 Voy realizando pequeñas partes del proyecto total. En cada iteración se van capturando requerimientos, análisis, diseño, construcción, testeo y despliegue. Es un mini ciclo de cascada. Cada iteración dura entre 2 y 6 semanas, esto permite que el usuario este probando mucho antes en comparación a cascada (interacción con el usuario constante). Ante cualquier error que ocurra, se esta a tiempo de arreglarlo.
 
 \subsection{Casos de Uso 2.0}
@@ -621,6 +626,7 @@ Tiene cinco postulados.
 
 \begin{center}
 \begin{table}[!htb]
+\centering
 \begin{tabular}{|l|l|}
 \hline
 \rowcolor[HTML]{FFFE65} 
@@ -658,11 +664,123 @@ Es un ciclo iterativo en el cual se parte de determinadas ideas, se construye ra
     \item Nosotros como emprendedores, no somos los usuarios pero decidimos como si lo fuéramos, esto se debe de evitar. 
 \end{itemize}
 
-\subsection{Metodologías Ágiles}
+\subsection{Declaración de supuestos}
+El método Lean UX no comienza con requerimientos, empieza con supuestos. A partir de estos se crean y validan diferentes hipótesis. De estas validaciones se miden los resultados, comparándolos con los esperados.
 
-\section{Scope Canvas}
+En el procesos suponemos que el producto a desarrollar esta orientado a personajes (arquetipos de personas).
 
-El Scope Canvas combina elementos que ya se venían trabajando en proyectos de lean UX de forma separada. Nos permite establecer formas de observar el exito del proyecto. Es una foto del momento.
+\subsection{MVP}
+Un MVP es un producto mínimo viable que se usa para validar las hipótesis. Esta formado por artefactos que crea el estudio de diseño. Cada etapa de diseño tiene un tiempo estimado de iteración.
+
+
+\begin{center}
+\textit{'Un producto mínimo viable es la versión de un nuevo producto que permite a un equipo obtener la máxima cantidad de aprendizaje validado sobre los clientes, con el menor esfuerzo posible'} - Eric Ries
+\end{center}
+
+El objetivo del MVP es obtener aprendizaje y generar valor en el producto. Los MVP se pueden clasificar en prototipos, descripción, y producto con funciones mínimas. La calidad de un MVP incrementa a medida que se van haciendo las iteraciones en el ciclo de vida.
+
+La calidad de los MVP debe ser: \textit{Keep. It. Simple. Stupid.} Fallar rápido y barato, debido a que es una inversión en un prototipo que después puede cambiarse.
+
+
+Al comenzar la planificación de un MVP hay que pensar:
+¿Existe una necesidad por parte de un usuario para la funcionalidad a implementar?
+¿Existe valor en la funcionalidad a implementar?
+¿Existe usabilidad en la funcionalidad a implementar?
+
+
+\subsubsection*{Prototipos}
+Se presenta a clientes potenciales una simulación del producto con suficiente nivel de detalla para comprender la funcionalidad a validar. 
+No es un producto.
+
+\subsubsection*{Descripciones}
+Se capta la atención de clientes potenciales con una descripción e información general sobre el producto/servicio. Son los mas baratos y simples. \textit{Landing page, correos, vídeos}
+
+\subsubsection*{Producto}
+Es código funcionando, no todo el desarrollo. Es el mas costoso. Solo se realiza la funcionalidad necesaria para validar la hipótesis.
+
+\subsubsection*{A quien se dirige}
+
+\begin{itemize}
+    \item Innovator: obtienen el producto recién sale
+    \item Early adopters: adoptan el producto de forma temprana
+    \item Early majority: 
+    \item Late majority
+    \item Laggards: La inversa a los innovadores.
+\end{itemize}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/CurvaInnovacion.png}
+    \caption{curva de adopción de la innovación}
+\end{figure}
+
+\subsubsection*{Obstáculos al desarrollo}
+
+\begin{itemize}
+    \item Tiempo
+    \item Alcance
+    \item Recursos
+    \item Legales, patentes
+    \item Miedo a la competencia
+    \item Miedo al riesgo
+    \item Miedo a la frustración
+\end{itemize}
+
+\subsubsection*{Experimento}
+Es el comienzo del proceso de validación. Se utiliza para probar el MVP con usuarios, para comprobar las hipótesis.
+
+Se debe mostrar o probar con clientes potenciales. Estos deben utilizar y explorar el prototipo lo mas libremente posible, para obtener mas feedback.
+
+Prueba de estabilidad, identifican problemas de usabilidad en el producto (prototipo). Permite reunir información cuantitativa y cualitativa del desempeño.
+
+Participa el facilitador (conduce la prueba), los observadores (toman notas), el wizard of Oz (simula la interacción en el prototipo si es necesario), y los usuarios (personas con el perfil necesario, protopersonas)
+
+Es necesario definir el perfil del usuario, el contexto de uso, y la meta.
+
+\begin{enumerate}
+    \item El facilitador pide comenzar la prueba
+    \item El facilitador lee el primer escenario y tarea, el usuario lo inicia
+    \item El usuario dice que piensa, facilitador y observador toman notas de lo que dice y hace el usuario
+    \item Continua la prueba a través de los escenarios y tareas
+    \item Se logra la meta o el tiempo, el facilitador termina la prueba
+    \item El facilitador agradece al usuario por su participación
+\end{enumerate}
+
+Se evalúa el producto, no al usuario en las pruebas de usabilidad.
+
+Se realiza Lean User Research, se realiza un rápido registro de los aspectos a considerar.
+\begin{itemize}
+    \item Stoppers: Dudas y problemas que tuvieron los participantes, cuando se quedan trabados
+    \item Values:
+    \item Feedback: Continuo (calendario permanente de actividades, simplificar el protocolo y entorno de experimentación, simplificar reclutamiento de usuarios, el equipo trabaja todo el tiempo, se reúne el equipo rápidamente luego de la prueba) y colaborativo (todo el equipo trabaja en conjunto sobre la declaración de hipótesis y construcción del MVP)
+    \item Recommendations: Sugerencias del moderador desde la perspectiva del usuario para corregir problemas de usabilidad y mejorar la experiencia.
+\end{itemize}
+
+
+\subsubsection*{Herramientas}
+\begin{itemize}
+    \item Business Model Canvas, gestiona el modelo de negocio
+    \item Validation Board, gestiona el ciclo de vida del producto
+    \item Scope Canvas, centrado en la información relevante del producto, ver en \ref{sec:ScopeCanvas}.
+\end{itemize}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/BusinessModelCanvas.jpg}
+    \caption{Plantilla Business Model Canvas}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/ValidationBoard.png}
+    \caption{Plantilla Validation Board}
+\end{figure}
+
+\newpage
+
+\section{Scope Canvas}\label{sec:ScopeCanvas}
+
+El Scope Canvas combina elementos que ya se venían trabajando en proyectos de lean UX de forma separada. Nos permite establecer formas de observar el éxito del proyecto. Es una foto del momento.
 
 
 El Scope Canvas no nos dice como vamos a trabajar.
@@ -671,15 +789,18 @@ El Scope Canvas no nos dice como vamos a trabajar.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.8\textwidth]{Imagenes/ScopeCanvas.jpg}
+    \includegraphics[width=0.7\textwidth]{Imagenes/ScopeCanvas.jpg}
     \caption{Plantilla de Scope Canvas}
 \end{figure}
+
+
 
 \begin{itemize}
     \item Hay que definir todas las partes que aparecen en la imagen.
     \item Con Scope Canvas se logran equipos de trabajo mas alineados en torno a las metas comunes. Que se tenga una cultura mas explicita.
     \item La visión de los actores clave desde el principio del producto que se esta ideando.
 \end{itemize}
+
 
 \subsubsection*{El propósito}
 
@@ -722,7 +843,7 @@ El Scope Canvas no nos dice como vamos a trabajar.
     \item Los motivadores los validamos a través de las acciones. Si el motivador es correcto, los usuarios adoptan el producto realizando acciones.
 \end{itemize}
 
-\subsubsection*{Acciones}
+\subsubsection*{Acciones (Comportamiento)}
 
 \begin{itemize}
     \item ¿Que acciones especificas de los usuarios implican conversión? ¿Como sabremos si estamos entregando los motivadores correctos?
@@ -759,10 +880,256 @@ El Scope Canvas no nos dice como vamos a trabajar.
     \item El debate permite simplificar todos los \emph{post-its}.
 \end{itemize}
 
+\section*{Décima y Onceava clase}
 
 
+\section{Desarrollo Iterativo e Incremental}
+
+Procesos de desarrollo de software, es una forma disciplinada de asignar tareas y recursos en un proyecto de software con el objetivo de tener un producto de calidad dentro de plazos y presupuestos predecibles.
+
+Permite comprender de forma creciente los requerimientos a medida que se va haciendo crecer el sistema. Se logra reducir los riesgos del proyecto
+
+Se vio en \ref{sec:procesoIterativoIncremental}.
+
+\section{Manifiesto Ágil}
+\subsection{Valores}
+Son 4, hay que mirarlos como una balanza, quien tiene mayor peso.
+\begin{itemize}
+    \item \textit{Valorar: al individuo y las interacciones del equipo de desarrollo sobre el proceso y las herramientas.} La gente es el principal factor de éxito de un proyecto. Significa darle mayor preponderancia a las personas. Sobre los procesos y herramientas no quiere decir de no darles importancia, dice de no ponerlas sobre las personas.
+    \item \textit{Desarrollar software que funciona mas que conseguir una buena documentación.} No producir documentos a menos que sean necesarios de forma inmediata para tomar una decisión importante.
+    \item \textit{La colaboración con el cliente mas que la negociación de un contrato.} Tiene que haber una interacción constante entre el cliente y el equipo de desarrollo. Llevar al pie de la letra al contrato (con plazos y costos preestablecidos) puede llevar al fracaso.
+    \item \textit{Responder a los cambios mas que seguir estrictamente un plan.} La habilidad de responder a los cambios determina el éxito o fracaso del proyecto.
+\end{itemize}
 
 \newpage
+
+\subsection{Principios}
+Son 12, se derivan de los valores.
+
+\textbf{Principios generales}
+
+\begin{enumerate}
+
+    \item \textit{La prioridad es satisfacer al cliente mediante entregas tempranas y continuas de software que le aporten valor.} Un proceso es ágil si a las pocas semanas de empezar ya estoy entregando software que funcione (aunque sea rudimentario). El cliente decide si pone en marcha el software con la funcionalidad que funciona o no.
+    \item \textit{Dar la bienvenida a los cambios.} Deben verse como algo positivo. La estructura debe ser flexible para poder incorporarlos sin demasiado coste.
+    
+    \textbf{Relativos al Proceso de desarrollo}
+    
+    \item \textit{Entregar frecuentemente software que funcione desde un par de semanas a un par de meses.} (2 semanas a un mes y medio)
+    \item \textit{La gente del negocio y los desarrolladores deben trabajar juntos a lo largo de todo el proyecto.} Necesita ser guiado por el cliente.
+    \item \textit{Construir el proyecto en torno a individuos motivados.} La gente es el principal factor de éxito, todo lo demás queda en segundo plano (proceso, entorno, gestión, etc). Los equipos motivados tiene muchísimo mejor desempeño.
+    \item \textit{El dialogo cara a cara es el método mas eficiente y efectivo para comunicar información dentro de un equipo de desarrollo.} Los miembros de equipo deben hablar entre ellos, la principal forma de comunicación.
+    \item \textit{El software que funciona es la medida principal de progreso.} Se mide en el estado por el código generado que este funcional. \textit{Proyecto en 50\% si el 50\% de los requisitos esta cubierto}
+    \item \textit{Los procesos ágiles promueven un desarrollo sostenible en el tiempo.} No se trata de desarrollar lo mas rápido posible, si no de mantener el ritmo durante la duración del proyecto, asegurando que la calidad de lo producido es máxima.
+    
+    \textbf{Relativos al Equipo de desarrollo}
+   
+    
+    \item \textit{La atención continua a la calidad técnica y al buen diseño mejora la agilidad.}
+    
+    \item \textit{La simplicidad es esencial.}
+    \item \textit{Las mejores arquitecturas, requisitos y diseños surgen de los equipos organizados por si mismos.} Todo el equipo es informado de las responsabilidades, estas recaen sobre todos sus miembros. El propio equipo decide la forma de organizarse.
+    \item \textit{En intervalos regulares, el equipo reflexiona respecto a como llegar a ser mas efectivo, y según esto ajusta su comportamiento.}
+\end{enumerate}
+
+\newpage
+
+\section{SCRUM}
+Es un proceso iterativo e incremental utilizado para la construcción de productos de Software. Se compone de iteraciones llamadas Sprints, estas son fijas en el tiempo. Se recomienda una duración de 1 a 4 semanas. El objetivo de las Sprints es construir un incremento del producto que potencialmente pueda ser usado por los clientes. No nos serviría algo que no pudiéramos utilizar al final de la iteración.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Imagenes/Scrum.png}
+    \caption{Proceso Scrum}
+\end{figure}
+
+\subsection{Artefactos}
+
+\subsubsection*{Pila de producto}
+Una vez que tengamos claro que personas son a las que vamos a aportar valor, es necesario recopilar en un único sitio todas las ideas, funcionalidades y elementos que van a componer el producto. Estos van ordenados por valor de negocio (arriba los que aportan mas). Esto se llama Pila de Producto o Product Backlog. Los elementos se conocen como PBIs (Product Backlog Items), estos contienen como mínimo una descripción, la prioridad que tengan, la estimación en tiempo y costo, y el valor que aporta. Los PBIs podrían ser historias de usuario.
+
+Las características de las pilas de producto deben de ser DEEP (Detallado, estimado, emergente, priorizado)
+\begin{itemize}
+    \item Detallado: los PBIs próximos (arriba de la pila) deben de tener el mayor detalle.
+    \item Estimado: Cada uno nos tiene que servir para planificar, mas arriba, estimaciones mas precisas.
+    \item Emergente: Una pila de producto no es estática, va cambiando con el tiempo, se agregan/eliminan elementos.
+    \item Priorizado: Mas importantes mas arriba de la pila, menos importantes abajo. Para priorizar hay distintos métodos. \textit{Ej. Método MoSCoW\footnote{M:must have - S:should have - C:could have - W:won't have}
+    , Método Kano, Método ROI}.
+\end{itemize}
+
+\subsubsection*{PBIs}
+Contienen como mínimo una descripción, la prioridad que tengan, la estimación en tiempo y costo, y el valor que aporta. Los PBIs podrían ser historias de usuario (Regla 3Cs - Card - Conversation - Confirmation). (mencionados arriba)
+
+\subsubsection*{Pila del Sprint, Sprint Backlog}
+El conjunto de PBIs y las tareas se llama Pila del Sprint (seleccionados por el Product Owner como mas importantes). Para llegar acá de la pila de producto, se hace una reunión de planificación.
+
+Se tiene Pendiente, En progreso, y Terminado. Las tareas mas arriba tienen mayor valor.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/SprintBacklog.jpg}
+    \caption{Sprint Backlog}
+\end{figure}
+
+\subsubsection*{Incremento del producto}
+Es el resultado de cada Sprint. Buscan que potencialmente se pueda poner en Producción, aportar valor al cliente.
+
+\subsection{Roles}
+\subsubsection*{Product Owner}
+Para gestionar toda esta comunicación y gestionar la pila de producto existe un rol especifico llamado Dueño de producto (Product Owner), es el responsable de mantener la visión del producto que se va a construir. Tiene que maximizar el valor entregado al final de la Sprint. Asiste a las reuniones de planificación y revisión (DEMO) del Sprint con el equipo de planificación para transmitir la visión del producto.
+
+\subsubsection*{Scrum Master}
+Facilita todas las reuniones que se realicen, acompaña al equipo a resolver las problemáticas que aparezcan en el desarrollo. Es el vigía del proceso, vela para que se lleve a cabo sin olvidar que esta pendiente de las personas que conforman el equipo. Debe de tener una buena visión de la organización, buena comunicación y gestión, ser un líder.
+
+\subsubsection*{Clientes, Stakeholders}
+Para empezar a construir un producto, antes debe haber una idea o necesidad. Las personas a las que construimos el producto se les llama Interesados o Stakeholders. Hay que saber distinguir a un usuario (cualquiera que use la aplicación) de los clientes (los que pagan por la aplicación).
+
+\subsubsection*{Equipo de Construcción}
+El equipo de construcción es el encargado de la construcción del producto en cada sprint. El equipo debe estar enfocado sobre una parte pequeña del producto. Esta formado por todas las personas que desarrollan, desarrolladores, diseñadores, arquitectos, testers, etc. El equipo es multidisciplinario (entre todos puedan dar servicio al proyecto), tienen que poder auto-organizarse (asignar tareas y estimarlas).
+
+El equipo no debe ser de mas de 9 personas.
+
+\subsection{Reuniones}
+El Sprint conviene que tenga una duración fija, busca un ritmo sostenido.
+
+\subsubsection*{De planificación}
+La primer reunión se llama Reunión de Planificación o Sprint Planning, se selecciona de los PBIs los mas importantes como el desgranado de estos tareas técnicas. Acuden el dueño de producto, el equipo de construcción, el Scrum Master. El resultado es la Pila del Sprint.
+
+El Product Owner explica al equipo de construcción la funcionalidad a construir.
+
+
+\subsubsection*{Daily}
+La Daily, para realizar una gestión de riesgos adecuada y fomentar la comunicación y sincronización entre los miembros del equipo. Se busca detectas problemas e impedimentos que afecten al desarrollo del Sprint. Es una reunión corta de no mas de 15 minutos. Se realiza todos los días. Busca delinear el plan para el día.
+
+\subsubsection*{De revisión, Demo}
+Al finalizar el Sprint, se realiza la Reunión de Revisión (Demo) donde se inspecciona todo lo realizado por el equipo de construcción. Acuden el Product Owner, el equipo de construcción y el Scrum Master. Puede ir cualquier persona que quiera ver lo entregado.
+
+\subsubsection*{De retrospectiva, Retro}
+Después de la Demo, el equipo se reúne para inspeccionar el proceso y la forma en que trabajaron. El objetivo es detectar posibles problemas y dar soluciones (Foco en las personas y proceso). Se llama Retro. Acuden todos los miembros del equipo de construcción, el Scrum Master y el dueño del producto. La Retro la facilita el Scrum Master
+
+Se pone el foco en las personas y el proceso dejando de lado el producto, acuden todos los miembros del proyecto.
+ 
+\subsubsection*{De refinamiento}
+Existe otra reunión cuyo objetivo es trabajar sobre los elementos futuros que entraran en el Sprint. Se llama reunión de refinamiento, se realiza cuando lo decide el equipo SCRUM. Busca añadir detalle, estimaciones y orden a los PBIs.
+
+
+
+\subsection{Tablero Kanban}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imagenes/Kanbanboard.png}
+    \caption{Tablero Kanban}
+\end{figure}
+
+Se enfoca en la entrega de servicios de una organización, una o mas personas colaboran para la entrega.
+
+\section*{Doceava clase}
+\section{Proceso de Desarrollo Unificado - RUP}
+
+Es una forma disciplinada de asignar tareas y responsabilidades en un proyecto de desarrollo de software, con el objetivo de obtener un producto de calidad .... % completar definicion
+
+\subsection*{Mejores practicas}
+\begin{itemize}
+    \item Desarrollo iterativo e incremental del software, lo visto en las secciones anteriores. (N iteraciones, cada una con su mini-ciclo en cascada) en las primeras iteraciones hay mas esfuerzo en captura de requerimientos y modelo de negocio, a medida que se avanza en el proyecto el tiempo se dedica mas a producción, testeo y despliegue. 
+    % grafico con la distribucion del tiempo
+    \item Proceso dirigido por casos de uso - RUP contribuye a obtener, organizar, documentar, rastrear, captar y comunicar los requerimientos. Los casos de uso probaron que son una buena forma de obtener los requisitos. Los casos de uso se integrarían a lo largo de todo el proceso.
+    \item Uso de arquitecturas basadas en componentes (reusabilidad) - Se basa en poder diseñar tempranamente una arquitectura base ejecutable, esta debe de ser flexible, fácil de modificar, intuitivamente comprensible, y promover la reusabilidad.
+    \item Trabajar con modelos visuales (UML)
+    \item Verificar la calidad del software - RUP ayuda a planificar, diseñar, implementar, ejecutar y evaluar pruebas que verifiquen las cualidades. Esto tiene que ser parte del proceso de desarrollo, no de un grupo independiente.
+    \item Control de cambios - RUP indica como controlar, rastrear y monitorear los cambios dentro del proceso iterativo de desarrollo. Ante un cambio se evalúa la relación costo/beneficio de introducirlo en la versión actual.
+\end{itemize}
+
+
+\subsection*{Fases de RUP}
+\begin{enumerate}
+    \item Inicio (o concepción): Se define el ámbito y los objetivos del proyecto. Se definen las funcionalidades. % cuadro
+    \item Elaboración: Busca una arquitectura del sistema estable (el hito). El dominio del problema busca finalizar los casos de uso. %cuadro
+    \item Construcción: Busca tener el producto beta (capacidad operacional inicial - hito). Se tiene el producto de software integrado y corriendo en la plataforma adecuada. Se pone mucho énfasis en la producción eficiente.
+    \item Transición: Es la release del producto, busca pasar el software desarrollado a la comunidad de usuarios. Hay que tener autosuficiencia por parte de los usuarios.
+\end{enumerate}
+
+\subsection*{Componentes del proceso}
+\begin{itemize}
+    \item Buissness modeling
+    \item Requirements
+    \item Analysis \& design
+    \item Implementation
+    \item Test
+    \item Deployment
+\end{itemize}
+
+\subsection*{Componentes de soporte al proceso}
+\begin{itemize}
+    \item Environment
+    \item Project Managment
+    \item Configuration \& change managment
+\end{itemize}
+
+
+\subsection*{Elementos}
+
+\begin{itemize}
+    \item Trabajador: Identifica un rol especifico en el proyecto de software. \textit{Ej. diseñador de objetos, de casos de uso, etc}
+    \item Actividad: Es una tarea que es responsabilidad de un trabajador. \textit{Ej. Diseñar objetos, Especificar casos de uso}
+    \item Artefacto: Resultado parcial o final que es producido y usado durante el proyecto. \textit{Ej. un documento, pruebas, requisitos}
+\end{itemize}
+
+\newpage
+
+
+% graficar/ilustrar lo que quiero mostrar 
+% lo que digo, como lo digo - it's a beautiful day and i can't see it
+% recitar 'un poema' POEMA
+% Prepararse, organizar la forma en que se hara la presentacion, elegir estilo voz y apariencia, manejar nervios y administrar todo armonicamente
+% salude y sorprenda a su audiencia
+% construir el clima
+% ser amigable
+% usar el humor
+% haga un desafio, preguntas - si nadie responde, 'si nadie se anima, me animo yo...'
+% use una cita, cree imagenes verbales
+% conocer muy bien el material!!!!, lo que muestro lo tengo que conocer, tengo que saber que es lo que sigue
+% aprender sobre la audiencia
+% preparar esquemas y notas
+% practique con anticipacion, no sale improvisado
+% visitar con anticipacion el lugar de la presentacion (especialmente si es formal)
+% Organizarse
+% Anunciar el tema claramente!!!!!!!!!! Decir que es lo que se va a hablar
+% Enunciar el objetivo con anticipacion, hacer un esquema de la presentacion en la introduccion
+% Usar transiciones al comienzo de cada seccion principal (verbalmente)
+% Dar tono a la presentacion, capturar la atencion de la audiencia, acomodar la frase de apertura a la audiencia
+% Cuidado con el Ho-Hum en la introduccion (relajacion)
+% Organizar el cuerpo principal, lo lindo/lo feo, pocas letras, mas imagines, organizado, cuidado con el tiempo
+% hacer uso del recurso, pero no abuso
+% dominar la herramienta (powerpoint, prezi, ... )
+% resumir mensaje, repetir puntos claves
+% pedir a la audiencia que actue al final (siempre que se pueda y corresponda)
+% referirse a la frase de apertura, finalizar con una nota positiva
+% usar el estilo propio
+% no leer la presentacion, queremos contar
+% ser sincero y mostrarse confidente
+% hacer contacto ocular
+% usar el humor con cuidado
+% poner atencion a los gestos, usar un elemento
+% practicar las expresiones faciales
+% elegir el tono de voz, proyectar la voz, variar el tono
+% pausar para hacer hacer enfasis, hablar despacio, tener un tono placentero, ser natural
+% apariencia de la vestimenta, vestirse apropiadamente para la audiencia (en sintonia con la audiencia)
+% parese frente a la audiencia, no a la pantalla
+% evitar hacer gestos que distraigan, usar un señalador para guiar a la audiencia
+% manejar nervios, relajarse, visualizarnos dando la presentacion, no presentar disculpas (hice tal cosa y no la tengo, no contarlo directamente)
+% concentrarse en el mensaje
+% convertir nervios en buena onda
+%
+% POEMA
+% prepararse
+% organizarse
+% elegir
+% manejar
+% Ahhh relajarse
+
+
+
 
 \section{Bibliografía de la materia}
 \begin{itemize}
