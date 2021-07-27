@@ -23,9 +23,13 @@
 	\hfill\includegraphics[width=6cm]{logofiuba.jpg}
     \centering
     \vfill
-    \Huge \textbf{Apuntes de análisis de la información}
+    \includegraphics[width=6cm]{Imagenes/logo.jpg}
+    
+    \Huge \textbf{Apuntes de}
+    
+    \Huge \textbf{Análisis de la Información}
     \vskip2cm
-    \Large [7509] Análisis de la información\\
+    \Large [7509]\\
     Curso González \\
     1C 2021 
     \vfill
@@ -45,9 +49,12 @@
 \section{Introducción}\label{sec:intro}
 El presente archivo contiene los apuntes que fueron tomados a lo largo de la cursada de la materia análisis de la información (7509) en el curso del profesor González - Turri.
 
-\subsection*{Contenido}
+\subsection*{Recomendaciones}
+La materia es muy tranquila y buena parte de los contenidos ya se tiene una idea de antes, sobretodo si se esta trabajando. (En mi opinión esta materia quedaría mejor al comienzo de la carrera)
 
-\subsection*{Practica}
+Respecto a los trabajos prácticos, son 3 (este cuatrimestre en virtualidad) y se realizan en grupos de 5/6. En los tres se realiza el mismo proceso de análisis de requisitos y una propuesta de mejora con Lean UX, no se programan los sistemas. En los dos primeros se entrega el documento con todo lo realizado, y en el tercero se realiza una presentación como preparación para el final. No requieren mucho tiempo cada uno. 
+
+El final consiste en realizar otro análisis de requisitos y mejora pero sin el acompañamiento del profesor de la practica, este trabajo se expone en una presentación, y luego se realizan preguntas teóricas de forma individual.
 
 % Grupos 5/6
 % Final exposición de TP para coloquio. Evaluación de la exposición, calidad del trabajo, presentación, algunas preguntas teóricas individuales (solo sobre lo de los lunes)
@@ -1027,12 +1034,11 @@ Se enfoca en la entrega de servicios de una organización, una o mas personas co
 \section*{Doceava clase}
 \section{Proceso de Desarrollo Unificado - RUP}
 
-Es una forma disciplinada de asignar tareas y responsabilidades en un proyecto de desarrollo de software, con el objetivo de obtener un producto de calidad .... % completar definicion
+Es una forma disciplinada de asignar tareas y responsabilidades en un proyecto de desarrollo de software, con el objetivo de obtener un producto de calidad. RUP (Rational Unified Process), no es un sistema con pasos firmemente establecidos, sino un conjunto de metodologías adaptables al contexto y necesidades de cada organización. Divide el proceso de desarrollo en ciclos, teniendo un producto al final de cada ciclo.
 
 \subsection*{Mejores practicas}
 \begin{itemize}
     \item Desarrollo iterativo e incremental del software, lo visto en las secciones anteriores. (N iteraciones, cada una con su mini-ciclo en cascada) en las primeras iteraciones hay mas esfuerzo en captura de requerimientos y modelo de negocio, a medida que se avanza en el proyecto el tiempo se dedica mas a producción, testeo y despliegue. 
-    % grafico con la distribucion del tiempo
     \item Proceso dirigido por casos de uso - RUP contribuye a obtener, organizar, documentar, rastrear, captar y comunicar los requerimientos. Los casos de uso probaron que son una buena forma de obtener los requisitos. Los casos de uso se integrarían a lo largo de todo el proceso.
     \item Uso de arquitecturas basadas en componentes (reusabilidad) - Se basa en poder diseñar tempranamente una arquitectura base ejecutable, esta debe de ser flexible, fácil de modificar, intuitivamente comprensible, y promover la reusabilidad.
     \item Trabajar con modelos visuales (UML)
@@ -1040,11 +1046,18 @@ Es una forma disciplinada de asignar tareas y responsabilidades en un proyecto d
     \item Control de cambios - RUP indica como controlar, rastrear y monitorear los cambios dentro del proceso iterativo de desarrollo. Ante un cambio se evalúa la relación costo/beneficio de introducirlo en la versión actual.
 \end{itemize}
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/DistribucionTiempoDesarrollo.PNG}
+    \caption{Distribución del tiempo en las fases.}
+\end{figure}
 
 \subsection*{Fases de RUP}
+Cada ciclo tiene estas fases.
+
 \begin{enumerate}
-    \item Inicio (o concepción): Se define el ámbito y los objetivos del proyecto. Se definen las funcionalidades. % cuadro
-    \item Elaboración: Busca una arquitectura del sistema estable (el hito). El dominio del problema busca finalizar los casos de uso. %cuadro
+    \item Inicio (o concepción): Se define el ámbito y los objetivos del proyecto. Se definen las funcionalidades y se identifican las entidades externas con las que se trata.
+    \item Elaboración: Busca una arquitectura del sistema estable (el hito). El dominio del problema busca finalizar los casos de uso. Tanto la funcionalidad como el dominio del problema se estudian en profundidad.
     \item Construcción: Busca tener el producto beta (capacidad operacional inicial - hito). Se tiene el producto de software integrado y corriendo en la plataforma adecuada. Se pone mucho énfasis en la producción eficiente.
     \item Transición: Es la release del producto, busca pasar el software desarrollado a la comunidad de usuarios. Hay que tener autosuficiencia por parte de los usuarios.
 \end{enumerate}
